@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>ubuntu 18.10 安裝 rclone onedrive | Kim Hsuan&#39;s Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="安裝RcloneRclone網站︰https:&#x2F;&#x2F;rclone.org&#x2F; 這邊推薦使用官方腳本安裝 1curl https:&#x2F;&#x2F;rclone.org&#x2F;install.sh | sudo bash  如果使用snap安裝可能會出現一些問題">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu 18.10 安裝 rclone onedrive">
+<meta property="og:url" content="http://hsuan.kim/2019/04/19/ubuntu-18-10-rclone-onedrive/index.html">
+<meta property="og:site_name" content="Kim Hsuan&#39;s Hexo">
+<meta property="og:description" content="安裝RcloneRclone網站︰https:&#x2F;&#x2F;rclone.org&#x2F; 這邊推薦使用官方腳本安裝 1curl https:&#x2F;&#x2F;rclone.org&#x2F;install.sh | sudo bash  如果使用snap安裝可能會出現一些問題">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2019-04-19T04:58:49.000Z">
+<meta property="article:modified_time" content="2021-06-07T15:24:51.868Z">
+<meta property="article:author" content="Hsuan">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Rclone">
+<meta property="article:tag" content="OneDrive">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Kim Hsuan's Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Kim Hsuan&#39;s Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜尋"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜尋"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hsuan.kim"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-ubuntu-18-10-rclone-onedrive" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/04/19/ubuntu-18-10-rclone-onedrive/" class="article-date">
+  <time class="dt-published" datetime="2019-04-19T04:58:49.000Z" itemprop="datePublished">2019-04-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      ubuntu 18.10 安裝 rclone onedrive
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="安裝Rclone"><a href="#安裝Rclone" class="headerlink" title="安裝Rclone"></a>安裝Rclone</h1><p>Rclone網站︰<a target="_blank" rel="noopener" href="https://rclone.org/">https://rclone.org/</a></p>
+<p>這邊推薦使用官方腳本安裝</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://rclone.org/install.sh | sudo bash</span><br></pre></td></tr></table></figure>
+
+<p>如果使用snap安裝可能會出現一些問題</p>
+<span id="more"></span>
+<h1 id="新增OneDrive到Rclone"><a href="#新增OneDrive到Rclone" class="headerlink" title="新增OneDrive到Rclone"></a>新增OneDrive到Rclone</h1><p>如果rclone有安裝成功，輸入<code>rclone config</code>可以看到以下內容<br>現在要新增一個設定，所以輸入<code>n</code>後按<code>Enter</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hsuan@ubuntu:~$ rclone config</span><br><span class="line">No remotes found - make a new one</span><br><span class="line">n) New remote</span><br><span class="line">s) Set configuration password</span><br><span class="line">q) Quit config</span><br><span class="line">n/s/q&gt; n</span><br></pre></td></tr></table></figure>
+
+<p>之後輸入設定的名字，這邊以<code>OneDrive</code>為範例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name&gt; OneDrive</span><br></pre></td></tr></table></figure>
+
+<p>按下<code>Enter</code>之後，會出現目前rclone所支援的網路硬碟列表， 您需要通過輸入相應的數字來選擇Microsoft OneDrive選項（現在為<code>18</code>，但將來可能會更改）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">Type of storage to configure.</span><br><span class="line">Enter a string value. Press Enter <span class="keyword">for</span> the default (<span class="string">&quot;&quot;</span>).</span><br><span class="line">Choose a number from below, or <span class="built_in">type</span> <span class="keyword">in</span> your own value</span><br><span class="line"> 1 / A stackable unification remote, <span class="built_in">which</span> can appear to merge the contents of several remotes</span><br><span class="line">   \ <span class="string">&quot;union&quot;</span></span><br><span class="line"> 2 / Alias <span class="keyword">for</span> a existing remote</span><br><span class="line">   \ <span class="string">&quot;alias&quot;</span></span><br><span class="line"> 3 / Amazon Drive</span><br><span class="line">   \ <span class="string">&quot;amazon cloud drive&quot;</span></span><br><span class="line"> 4 / Amazon S3 Compliant Storage Provider (AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Minio, etc)</span><br><span class="line">   \ <span class="string">&quot;s3&quot;</span></span><br><span class="line"> 5 / Backblaze B2</span><br><span class="line">   \ <span class="string">&quot;b2&quot;</span></span><br><span class="line"> 6 / Box</span><br><span class="line">   \ <span class="string">&quot;box&quot;</span></span><br><span class="line"> 7 / Cache a remote</span><br><span class="line">   \ <span class="string">&quot;cache&quot;</span></span><br><span class="line"> 8 / Dropbox</span><br><span class="line">   \ <span class="string">&quot;dropbox&quot;</span></span><br><span class="line"> 9 / Encrypt/Decrypt a remote</span><br><span class="line">   \ <span class="string">&quot;crypt&quot;</span></span><br><span class="line">10 / FTP Connection</span><br><span class="line">   \ <span class="string">&quot;ftp&quot;</span></span><br><span class="line">11 / Google Cloud Storage (this is not Google Drive)</span><br><span class="line">   \ <span class="string">&quot;google cloud storage&quot;</span></span><br><span class="line">12 / Google Drive</span><br><span class="line">   \ <span class="string">&quot;drive&quot;</span></span><br><span class="line">13 / Hubic</span><br><span class="line">   \ <span class="string">&quot;hubic&quot;</span></span><br><span class="line">14 / JottaCloud</span><br><span class="line">   \ <span class="string">&quot;jottacloud&quot;</span></span><br><span class="line">15 / Local Disk</span><br><span class="line">   \ <span class="string">&quot;local&quot;</span></span><br><span class="line">16 / Mega</span><br><span class="line">   \ <span class="string">&quot;mega&quot;</span></span><br><span class="line">17 / Microsoft Azure Blob Storage</span><br><span class="line">   \ <span class="string">&quot;azureblob&quot;</span></span><br><span class="line">18 / Microsoft OneDrive</span><br><span class="line">   \ <span class="string">&quot;onedrive&quot;</span></span><br><span class="line">19 / OpenDrive</span><br><span class="line">   \ <span class="string">&quot;opendrive&quot;</span></span><br><span class="line">20 / Openstack Swift (Rackspace Cloud Files, Memset Memstore, OVH)</span><br><span class="line">   \ <span class="string">&quot;swift&quot;</span></span><br><span class="line">21 / Pcloud</span><br><span class="line">   \ <span class="string">&quot;pcloud&quot;</span></span><br><span class="line">22 / QingCloud Object Storage</span><br><span class="line">   \ <span class="string">&quot;qingstor&quot;</span></span><br><span class="line">23 / SSH/SFTP Connection</span><br><span class="line">   \ <span class="string">&quot;sftp&quot;</span></span><br><span class="line">24 / Webdav</span><br><span class="line">   \ <span class="string">&quot;webdav&quot;</span></span><br><span class="line">25 / Yandex Disk</span><br><span class="line">   \ <span class="string">&quot;yandex&quot;</span></span><br><span class="line">26 / http Connection</span><br><span class="line">   \ <span class="string">&quot;http&quot;</span></span><br><span class="line">Storage&gt; 18</span><br></pre></td></tr></table></figure>
+
+<p>接下來兩個步驟，按<code>Enter</code>鍵就好，不用輸入任何信息，因為無需輸入Microsoft App Client ID或Secret：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Microsoft App Client Id</span><br><span class="line">Leave blank normally.</span><br><span class="line">Enter a string value. Press Enter <span class="keyword">for</span> the default (<span class="string">&quot;&quot;</span>).</span><br><span class="line">client_id&gt; </span><br><span class="line">Microsoft App Client Secret</span><br><span class="line">Leave blank normally.</span><br><span class="line">Enter a string value. Press Enter <span class="keyword">for</span> the default (<span class="string">&quot;&quot;</span>).</span><br><span class="line">client_secret&gt; </span><br></pre></td></tr></table></figure>
+
+<p>是否要編輯進階配置，這邊輸入<code>n</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Edit advanced config? (y/n)</span><br><span class="line">y) Yes</span><br><span class="line">n) No</span><br><span class="line">y/n&gt; n</span><br></pre></td></tr></table></figure>
+
+<p>是否使用自動配置，這邊如果是是用圖形界面的話可以輸入<code>y</code>，使用文字界面的話就輸入<code>n</code>手動提供權限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Use auto config?</span><br><span class="line"> * Say Y <span class="keyword">if</span> not sure</span><br><span class="line"> * Say N <span class="keyword">if</span> you are working on a remote or headless machine</span><br><span class="line">y) Yes</span><br><span class="line">n) No</span><br><span class="line">y/n&gt; y</span><br></pre></td></tr></table></figure>
+
+<p>在預設瀏覽器會打開一個新的分頁，請登入OneDrive帳號，並允許Rclone的訪問權限。<br>Rclone會在本機的端口53682運行web服務，以取得身份驗證token。如果有防火牆可能要暫時取消阻擋。</p>
+<p>選擇OneDrive的帳戶類型，輸入<code>1</code>，以對應OneDrive的Persional或Business帳戶。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Choose a number from below, or <span class="built_in">type</span> <span class="keyword">in</span> an existing value</span><br><span class="line"> 1 / OneDrive Personal or Business</span><br><span class="line">   \ <span class="string">&quot;onedrive&quot;</span></span><br><span class="line"> 2 / Root Sharepoint site</span><br><span class="line">   \ <span class="string">&quot;sharepoint&quot;</span></span><br><span class="line"> 3 / Type <span class="keyword">in</span> driveID</span><br><span class="line">   \ <span class="string">&quot;driveid&quot;</span></span><br><span class="line"> 4 / Type <span class="keyword">in</span> SiteID</span><br><span class="line">   \ <span class="string">&quot;siteid&quot;</span></span><br><span class="line"> 5 / Search a Sharepoint site</span><br><span class="line">   \ <span class="string">&quot;search&quot;</span></span><br><span class="line">Your choice&gt; 1</span><br></pre></td></tr></table></figure>
+
+<p>接下來會列出該帳號所擁有的Onedrive列表，請根據需求做選擇。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Found 1 drives, please select the one you want to use:</span><br><span class="line">0:  (personal) id=9b42f86057109d0a</span><br><span class="line">Chose drive to use:&gt; 0</span><br></pre></td></tr></table></figure>
+
+<p>之後會看到以下文字，輸入<code>y</code>在按<code>Enter</code>繼續</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Found drive <span class="string">&#x27;root&#x27;</span> of <span class="built_in">type</span> <span class="string">&#x27;personal&#x27;</span>, URL: https://onedrive.live.com/?cid=9b42f86057109d0a</span><br><span class="line">Is that okay?</span><br><span class="line">y) Yes</span><br><span class="line">n) No</span><br><span class="line">y/n&gt; y</span><br></pre></td></tr></table></figure>
+
+<p>確認設定是否正確(token請勿提供給他人)，正確請輸入<code>y</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">--------------------</span><br><span class="line">[OneDrive]</span><br><span class="line"><span class="built_in">type</span> = onedrive</span><br><span class="line">token = &#123;<span class="string">&quot;access_token&quot;</span>:<span class="string">&quot;EwCAA8l6BAAURSN/FHlDW5xN7VtKKzxfQSG7KP8xH&quot;</span>,<span class="string">&quot;expiry&quot;</span>:<span class="string">&quot;2019-04-16T06:15:59.363270812+08:00&quot;</span>&#125;</span><br><span class="line">drive_id = 9b42f86057109d0a</span><br><span class="line">drive_type = personal</span><br><span class="line">--------------------</span><br><span class="line">y) Yes this is OK</span><br><span class="line">e) Edit this remote</span><br><span class="line">d) Delete this remote</span><br><span class="line">y/e/d&gt; y</span><br></pre></td></tr></table></figure>
+
+<p>最後輸入<code>q</code>離開rclone設定</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Current remotes:</span><br><span class="line"></span><br><span class="line">Name                 Type</span><br><span class="line">====                 ====</span><br><span class="line">OneDrive             onedrive</span><br><span class="line"></span><br><span class="line">e) Edit existing remote</span><br><span class="line">n) New remote</span><br><span class="line">d) Delete remote</span><br><span class="line">r) Rename remote</span><br><span class="line">c) Copy remote</span><br><span class="line">s) Set configuration password</span><br><span class="line">q) Quit config</span><br><span class="line">e/n/d/r/c/s/q&gt; q</span><br></pre></td></tr></table></figure>
+
+<h1 id="掛載OneDrive目錄"><a href="#掛載OneDrive目錄" class="headerlink" title="掛載OneDrive目錄"></a>掛載OneDrive目錄</h1><p>建議在家目錄中建立一個OneDrive資料家</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir OneDrive</span><br></pre></td></tr></table></figure>
+
+<p>要使用Rclone掛載Microsoft OneDrive，請使用以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rclone --vfs-cache-mode writes mount OneDrive: ~/OneDrive</span><br></pre></td></tr></table></figure>
+
+<p>其中<code>Onedrive</code>是在Rclone設定的名稱，<code>~/OneDrive</code>是本機所要掛載的資料夾</p>
+<p>根據Rclone的文件說明，如果掛載時沒有使用<code>--vfs-cache-mode </code>，許多程序無法使用Rclone所掛載的檔案。</p>
+<h1 id="開機時自動掛載OneDrive"><a href="#開機時自動掛載OneDrive" class="headerlink" title="開機時自動掛載OneDrive"></a>開機時自動掛載OneDrive</h1><p>測試失敗<br>使用初始應用程式→加入</p>
+<p>名稱(N): </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Rclone OneDrive Mount</span><br></pre></td></tr></table></figure>
+<p>指令(M): </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c &quot;rclone --vfs-cache-mode writes mount OneDrive : ~/OneDrive&quot;</span><br></pre></td></tr></table></figure>
+
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p><a target="_blank" rel="noopener" href="https://wp.madjack.info/linux/rclone-googledrive-onedrive.html">Rclone:玩轉Google Drive &amp; One Drive</a><br><a target="_blank" rel="noopener" href="https://www.linuxuprising.com/2018/07/how-to-mount-onedrive-in-linux-using.html">How To Mount OneDrive In Linux Using Rclone (Supports Business And Personal Accounts) </a><br><a target="_blank" rel="noopener" href="https://www.moerats.com/archives/491/">在Debian/Ubuntu上使用rclone挂载OneDrive网盘</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hsuan.kim/2019/04/19/ubuntu-18-10-rclone-onedrive/" data-id="ckqqlyhov0001fxwe2yf7f78j" data-title="ubuntu 18.10 安裝 rclone onedrive" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OneDrive/" rel="tag">OneDrive</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rclone/" rel="tag">Rclone</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/06/17/Windows-10-wsl-ubuntu-cmder-zsh/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Windows 10 安裝 wsl ubuntu + cmder + zsh
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/05/hexo-github-pages-windows-10/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">在 Windows 10 安裝 Hexo 並部屬到 GitHub Pages</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">標籤</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OneDrive/" rel="tag">OneDrive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rclone/" rel="tag">Rclone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WSL/" rel="tag">WSL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos/" rel="tag">centos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmder/" rel="tag">cmder</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yum/" rel="tag">yum</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/" rel="tag">zsh</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">標籤雲</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/OneDrive/" style="font-size: 10px;">OneDrive</a> <a href="/tags/Rclone/" style="font-size: 10px;">Rclone</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/WSL/" style="font-size: 10px;">WSL</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/cmder/" style="font-size: 10px;">cmder</a> <a href="/tags/yum/" style="font-size: 10px;">yum</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">彙整</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/06/25/yum-error-rpmdb-open-failed/">使用 yum 時 報錯 rpmdb open failed 解決方法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/17/Windows-10-wsl-ubuntu-cmder-zsh/">Windows 10 安裝 wsl ubuntu + cmder + zsh</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/19/ubuntu-18-10-rclone-onedrive/">ubuntu 18.10 安裝 rclone onedrive</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/05/hexo-github-pages-windows-10/">在 Windows 10 安裝 Hexo 並部屬到 GitHub Pages</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Hsuan<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Windows 10 安裝 wsl ubuntu + cmder + zsh | Kim Hsuan&#39;s Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="安裝 WSL安裝適用於 Linux 的 Windows 子系統 系統管理員身分開啟 PowerShell 並執行：1Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux 重新啟動電腦">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows 10 安裝 wsl ubuntu + cmder + zsh">
+<meta property="og:url" content="http://hsuan.kim/2019/06/17/Windows-10-wsl-ubuntu-cmder-zsh/index.html">
+<meta property="og:site_name" content="Kim Hsuan&#39;s Hexo">
+<meta property="og:description" content="安裝 WSL安裝適用於 Linux 的 Windows 子系統 系統管理員身分開啟 PowerShell 並執行：1Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux 重新啟動電腦">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2019-06-17T07:26:52.000Z">
+<meta property="article:modified_time" content="2021-06-07T15:24:51.868Z">
+<meta property="article:author" content="Hsuan">
+<meta property="article:tag" content="WSL">
+<meta property="article:tag" content="cmder">
+<meta property="article:tag" content="zsh">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Kim Hsuan's Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Kim Hsuan&#39;s Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜尋"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜尋"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hsuan.kim"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Windows-10-wsl-ubuntu-cmder-zsh" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/06/17/Windows-10-wsl-ubuntu-cmder-zsh/" class="article-date">
+  <time class="dt-published" datetime="2019-06-17T07:26:52.000Z" itemprop="datePublished">2019-06-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Windows 10 安裝 wsl ubuntu + cmder + zsh
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="安裝-WSL"><a href="#安裝-WSL" class="headerlink" title="安裝 WSL"></a>安裝 WSL</h1><h2 id="安裝適用於-Linux-的-Windows-子系統"><a href="#安裝適用於-Linux-的-Windows-子系統" class="headerlink" title="安裝適用於 Linux 的 Windows 子系統"></a>安裝適用於 Linux 的 Windows 子系統</h2><ol>
+<li>系統管理員身分開啟 PowerShell 並執行：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure></li>
+<li>重新啟動電腦<span id="more"></span>
+<h2 id="下載-Ubuntu-app"><a href="#下載-Ubuntu-app" class="headerlink" title="下載 Ubuntu app"></a>下載 Ubuntu app</h2><h2 id="從-Microsoft-Store-安裝"><a href="#從-Microsoft-Store-安裝" class="headerlink" title="從 Microsoft Store 安裝"></a>從 Microsoft Store 安裝</h2></li>
+</ol>
+<p>開啟 Microsoft Store，並搜尋Ubuntu</p>
+<p>參考資料：<a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-tw/windows/wsl/install-win10">在 Windows 10 上安裝 Windows 子系統適用於 Linux (WSL)</a></p>
+<h2 id="使用-PowerShell-下載"><a href="#使用-PowerShell-下載" class="headerlink" title="使用 PowerShell 下載"></a>使用 PowerShell 下載</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile Ubuntu.appx -UseBasicParsing</span><br></pre></td></tr></table></figure>
+<p>參考資料：<a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-tw/windows/wsl/install-manual">手動下載 Linux (WSL) 散發版本的 Windows 子系統</a></p>
+<h1 id="安裝-cmder"><a href="#安裝-cmder" class="headerlink" title="安裝 cmder"></a>安裝 cmder</h1><p><a target="_blank" rel="noopener" href="https://cmder.net/">https://cmder.net/</a></p>
+<h2 id="配置環境變數"><a href="#配置環境變數" class="headerlink" title="配置環境變數"></a>配置環境變數</h2><p>本機→右鍵→內容→進階系統設定→環境變數</p>
+
+
+<h1 id="安裝-zsh"><a href="#安裝-zsh" class="headerlink" title="安裝 zsh"></a>安裝 zsh</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install zsh</span><br></pre></td></tr></table></figure>
+
+<h1 id="安裝-oh-my-zsh"><a href="#安裝-oh-my-zsh" class="headerlink" title="安裝 oh-my-zsh"></a>安裝 oh-my-zsh</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+<h1 id="安裝-Powerline-字型"><a href="#安裝-Powerline-字型" class="headerlink" title="安裝 Powerline 字型"></a><strong>安裝 Powerline 字型</strong></h1><p>這邊使用的是<strong>Ubuntu Mono derivative Powerline</strong></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/powerline/fonts/blob/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf">https://github.com/powerline/fonts/blob/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline.ttf</a></p>
+<h1 id="安裝-agnoster-zsh-theme"><a href="#安裝-agnoster-zsh-theme" class="headerlink" title="安裝 agnoster.zsh-theme"></a>安裝 agnoster.zsh-theme</h1><p>編輯<code>~/.zshrc</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 找到這項設定</span><br><span class="line">ZSH_THEME=&quot;robbyrussell&quot;</span><br><span class="line"></span><br><span class="line"># 將佈景主題改成這個</span><br><span class="line">ZSH_THEME=&quot;agnoster&quot;</span><br></pre></td></tr></table></figure>
+<p>存檔後重啟 ubuntu 終端機</p>
+<h1 id="安裝-Powerline-字型-1"><a href="#安裝-Powerline-字型-1" class="headerlink" title="安裝 Powerline 字型"></a>安裝 Powerline 字型</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># clone</span><br><span class="line">git clone https://github.com/powerline/fonts.git --depth=1</span><br><span class="line"># install</span><br><span class="line">cd fonts</span><br><span class="line">./install.sh</span><br><span class="line"># clean-up a bit</span><br><span class="line">cd ..</span><br><span class="line">rm -rf fonts</span><br></pre></td></tr></table></figure>
+
+<h1 id="Cmder設定"><a href="#Cmder設定" class="headerlink" title="Cmder設定"></a>Cmder設定</h1>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WSL::zsh</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-icon &quot;%LOCALAPPDATA%\wsltty\wsl.ico&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set &quot;PATH=%ConEmuBaseDirShort%\wsl;%PATH%&quot; &amp; %ConEmuBaseDirShort%\conemu-cyg-64.exe --wsl -cur_console:pm:/mnt -t zsh -l</span><br></pre></td></tr></table></figure>
+
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p><a target="_blank" rel="noopener" href="https://twasa.ml/post/wsl/">WSL + zsh + oh-my-zsh + powerlevel9k + cmder</a><br><a target="_blank" rel="noopener" href="https://hackmd.io/@tf-z1zFMTIC8ADhxEcGJEA/BJByCIUHf?type=view">Windows Subsystem for Linux (WSL) 環境設定</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34152045">Windows10终端优化方案：Ubuntu子系统+cmder+oh-my-zsh</a><br><a target="_blank" rel="noopener" href="https://blog.joaograssi.com/windows-subsystem-for-linux-with-oh-my-zsh-conemu/">Setting up Windows Subsystem for Linux with zsh + oh-my-zsh + ConEmu</a><br><a target="_blank" rel="noopener" href="https://blog.kkbruce.net/2019/03/wsl-ubuntu-zsh-windows-command-line.html">以WSL+Ubuntu+zsh打造Windows上高富帥的命令列模式</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hsuan.kim/2019/06/17/Windows-10-wsl-ubuntu-cmder-zsh/" data-id="ckqqlyhp10003fxwefhzb7l8s" data-title="Windows 10 安裝 wsl ubuntu + cmder + zsh" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WSL/" rel="tag">WSL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cmder/" rel="tag">cmder</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zsh/" rel="tag">zsh</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/06/25/yum-error-rpmdb-open-failed/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          使用 yum 時 報錯 rpmdb open failed 解決方法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/19/ubuntu-18-10-rclone-onedrive/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ubuntu 18.10 安裝 rclone onedrive</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">標籤</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OneDrive/" rel="tag">OneDrive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rclone/" rel="tag">Rclone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WSL/" rel="tag">WSL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos/" rel="tag">centos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmder/" rel="tag">cmder</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yum/" rel="tag">yum</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/" rel="tag">zsh</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">標籤雲</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/OneDrive/" style="font-size: 10px;">OneDrive</a> <a href="/tags/Rclone/" style="font-size: 10px;">Rclone</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/WSL/" style="font-size: 10px;">WSL</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/cmder/" style="font-size: 10px;">cmder</a> <a href="/tags/yum/" style="font-size: 10px;">yum</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">彙整</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/06/25/yum-error-rpmdb-open-failed/">使用 yum 時 報錯 rpmdb open failed 解決方法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/17/Windows-10-wsl-ubuntu-cmder-zsh/">Windows 10 安裝 wsl ubuntu + cmder + zsh</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/19/ubuntu-18-10-rclone-onedrive/">ubuntu 18.10 安裝 rclone onedrive</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/05/hexo-github-pages-windows-10/">在 Windows 10 安裝 Hexo 並部屬到 GitHub Pages</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Hsuan<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

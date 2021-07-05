@@ -4,14 +4,20 @@
   <meta charset="utf-8">
   
   
-  <title>彙整 | Kim Hsuan&#39;s Hexo</title>
+  <title>使用 yum 時 報錯 rpmdb open failed 解決方法 | Kim Hsuan&#39;s Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Kim Hsuan&#39;s Hexo">
-<meta property="og:url" content="http://hsuan.kim/archives/index.html">
+  <meta name="description" content="使用yum的時候，如果rpm的資料庫損壞，會提示以下訊息。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 yum 時 報錯 rpmdb open failed 解決方法">
+<meta property="og:url" content="http://hsuan.kim/2019/06/25/yum-error-rpmdb-open-failed/index.html">
 <meta property="og:site_name" content="Kim Hsuan&#39;s Hexo">
+<meta property="og:description" content="使用yum的時候，如果rpm的資料庫損壞，會提示以下訊息。">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2019-06-25T04:18:03.000Z">
+<meta property="article:modified_time" content="2021-06-07T15:24:51.868Z">
 <meta property="article:author" content="Hsuan">
+<meta property="article:tag" content="centos">
+<meta property="article:tag" content="yum">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Kim Hsuan's Hexo" type="application/atom+xml">
@@ -69,106 +75,62 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/06/25/yum-error-rpmdb-open-failed/" class="archive-article-date">
-  <time class="dt-published" datetime="2019-06-25T04:18:03.000Z" itemprop="datePublished">6月 25</time>
+        <section id="main"><article id="post-yum-error-rpmdb-open-failed" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/06/25/yum-error-rpmdb-open-failed/" class="article-date">
+  <time class="dt-published" datetime="2019-06-25T04:18:03.000Z" itemprop="datePublished">2019-06-25</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/25/yum-error-rpmdb-open-failed/">使用 yum 時 報錯 rpmdb open failed 解決方法</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      使用 yum 時 報錯 rpmdb open failed 解決方法
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/06/17/Windows-10-wsl-ubuntu-cmder-zsh/" class="archive-article-date">
-  <time class="dt-published" datetime="2019-06-17T07:26:52.000Z" itemprop="datePublished">6月 17</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/17/Windows-10-wsl-ubuntu-cmder-zsh/">Windows 10 安裝 wsl ubuntu + cmder + zsh</a>
-    </h1>
-  
+        <p>使用yum的時候，如果rpm的資料庫損壞，會提示以下訊息。</p>
+<span id="more"></span>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[hsuan@localhost ~]$ yum update</span><br><span class="line">Loaded plugins: fastestmirror</span><br><span class="line">You need to be root to perform this command.</span><br><span class="line">[hsuan@localhost ~]$ sudo yum update</span><br><span class="line">error: rpmdb: BDB0113 Thread/process 22859/140508565112640 failed: BDB1507 Thread died in Berkeley DB library</span><br><span class="line">error: db5 error(-30973) from dbenv-&gt;failchk: BDB0087 DB_RUNRECOVERY: Fatal error, run database recovery</span><br><span class="line">error: cannot open Packages index using db5 -  (-30973)</span><br><span class="line">error: cannot open Packages database in /var/lib/rpm</span><br><span class="line">CRITICAL:yum.main:</span><br><span class="line"></span><br><span class="line">Error: rpmdb open failed</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/04/19/ubuntu-18-10-rclone-onedrive/" class="archive-article-date">
-  <time class="dt-published" datetime="2019-04-19T04:58:49.000Z" itemprop="datePublished">4月 19</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/19/ubuntu-18-10-rclone-onedrive/">ubuntu 18.10 安裝 rclone onedrive</a>
-    </h1>
-  
+<p>這時候可以移除資料庫檔案重建，即可恢復正常</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ rm -f /var/lib/rpm/__db*</span><br><span class="line">$ rpm --rebuilddb</span><br><span class="line">$ yum clean all</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/11/05/hexo-github-pages-windows-10/" class="archive-article-date">
-  <time class="dt-published" datetime="2018-11-05T14:42:48.000Z" itemprop="datePublished">11月 5</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/05/hexo-github-pages-windows-10/">在 Windows 10 安裝 Hexo 並部屬到 GitHub Pages</a>
-    </h1>
-  
+<p>參考資料<br><a target="_blank" rel="noopener" href="https://blog.vvtitan.com/2017/02/%E4%BD%BF%E7%94%A8yum%E6%8C%87%E4%BB%A4%E6%99%82%E7%99%BC%E7%94%9Ferror-rpmdb-open-failed%E9%8C%AF%E8%AA%A4%E7%9A%84%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%B3%95/">使用yum指令時發生Error: rpmdb open failed錯誤的解決方法</a><br><a target="_blank" rel="noopener" href="https://blog.51cto.com/alsww/1742134">使用yum提示Error: rpmdb open failed</a><br><a target="_blank" rel="noopener" href="https://blog.51cto.com/lwm666/1943623">rpmdb open failed 的解决办法</a></p>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hsuan.kim/2019/06/25/yum-error-rpmdb-open-failed/" data-id="ckqqlyhp20004fxweg0c0d4w9" data-title="使用 yum 時 報錯 rpmdb open failed 解決方法" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/" rel="tag">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/yum/" rel="tag">yum</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/17/Windows-10-wsl-ubuntu-cmder-zsh/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Windows 10 安裝 wsl ubuntu + cmder + zsh</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 
 </section>
